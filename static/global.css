@@ -1,0 +1,25 @@
+body {
+  color: var(--black);
+  font-family: Open Sans;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+  display: inline-block;
+}
+
+:root {
+  --black: #121212;
+  --white: #fafafa;
+  --gray: #DEDEDE;
+}
+
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+}

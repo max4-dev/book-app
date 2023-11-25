@@ -1,7 +1,11 @@
+import { Favorites } from './views/favorites/favorites';
 import { MainView } from './views/main/main';
 
 class App {
-  routes = [{ path: '', view: MainView }];
+  routes = [
+    { path: '', view: MainView },
+    { path: '#favorites', view: Favorites },
+  ];
 
   appState = {
     favorites: [],
@@ -9,7 +13,12 @@ class App {
 
   constructor() {
     window.addEventListener('hashchange', this.route.bind(this));
+    this.getFavorites();
     this.route();
+  }
+
+  getFavorites() {
+    this.appState.favorites = JSON.parse(localStorage.getItem('favorites'));
   }
 
   route() {
